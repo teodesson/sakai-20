@@ -1,0 +1,103 @@
+body {
+	width: 100%;
+}
+
+.indnt1 {
+    left: 21px;
+}
+
+.indnt2 {
+    position: relative;
+    left: 18px;
+}
+
+.feedUrl {
+	padding-left: 30px;
+}
+
+.podTitle {
+	margin-left: 30px;
+}
+
+.rssIcon {
+	position: relative;
+	top: 6px;
+	text-decoration: none;
+}
+
+.podDelDescPosition {
+	position: relative;
+	top: 12px;
+}
+
+.podDelButtonsPosition {
+	position: relative;
+	top: 30px;
+}
+
+.podcatcher_popup {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding: 5px 5px 5px 5px;
+  color: inherit;
+  background-color: #ffffcc;
+  border: 1px dotted #003366;
+  line-height: 100%;
+}
+
+url {
+	position: relative;
+	left: 15px;
+	margin: .5em 0;
+}
+
+.pod-box {
+  margin-bottom: 1rem;
+}
+
+.pod-box p {
+  font-size: 12pt;
+}
+
+.pod-box input {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.pod-box button {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.button-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.button-box .btn{
+  width: 100%;
+}
+
+.btn-pad {
+  padding-bottom: 0.25rem;
+}
+
+.inline {
+  display: inline;
+}
+
+.mid {
+  text-align: center;
+}
+
+.podmodal .text-body {
+  font-size: 12pt;
+}
+
+.podmodal .text-footer {
+  font-size: 11pt;
+  text-align: center;
+}
+

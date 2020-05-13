@@ -1,0 +1,63 @@
+<!-- sakai_resources_zipDownloadFinish.vm, version: $Revision:  $, use with org.sakaiproject.tool.content.ResourcesAction.java -->
+<script src="/library/js/spinner.js" type="text/javascript"></script>
+<div class="portletBody">
+    <div class="instruction">$tlang.getString("zipdownload.sure")</div>
+    #if ($alertMessage)
+        <div class="sak-banner-error">$tlang.getString("label.alert") $formattedText.escapeHtml($alertMessage)</div>
+    #end
+    
+    <form action="#toolForm("ResourcesAction")" id="zipDownloadFileForm" name="zipDownloadFileForm" method="post" >
+        <input type="hidden" name="collectionId" value="$formattedText.escapeHtml($collectionId)" />
+        #if ($zipDownloadItems.size()>0)
+            <table class ="listHier lines" cellspacing="0" summary="$tlang.getString("zipdownload.table")" border="0" cellpadding="0">
+                <tr>
+                    <th id="title">
+                        $tlang.getString("title.name")
+                    </th>
+                    <th id="size">
+                        $tlang.getString("title.size")
+                    </th>
+                    <th id="created">
+                        $tlang.getString("title.created")
+                    </th>
+                    <th id="last">
+                        $tlang.getString("title.last")
+                    </th>
+                </tr>
+                #foreach ($member in $zipDownloadItems)
+                    <tr>
+                        <td headers="title">
+                            <h4>
+                                #if($member.isCollection())
+                                    <span class="fa fa-folder" aria-hidden="true"></span>
+                                #else
+                                    <span class="$member.iconClass" aria-hidden="true"></span>
+                                #end
+                                <span class="sr-only">$!member.label</span>
+                                <a href="$member.accessUrl" target="_blank">
+                                    $member.name
+                                </a>
+                            </h4>
+                        </td>
+                        <td headers="size">
+                            $member.size
+                        </td>
+                        <td headers="created">
+                            $member.createdBy
+                        </td>
+                        <td headers="last">
+                            $member.modifiedTime
+                        </td>
+                    </tr>
+                #end
+            </table>
+            <p class ="act">
+            #if (!$zipDownloadIndividualFileSizeExceeded && !$zipDownloadTotalFileSizeExceeded)
+                <input type="submit" class="active" onclick="SPNR.disableElementAndSpin(this.parentNode.id, this, false)" id="zipDownloadButton" name="eventSubmit_doFinalizeZipDownload" value="$tlang.getString("zipdownload.show1")" accesskey="s" aria-label="$tlang.getString("zipdownload.submit")"/>
+            #end
+                <input type="submit" name="eventSubmit_doCancel" value="$tlang.getString("label.continue")" accesskey="x" />
+                <input type="hidden" name="sakai_csrf_token" value="$sakai_csrf_token" />
+            </p>
+        #end
+    </form>
+</div>

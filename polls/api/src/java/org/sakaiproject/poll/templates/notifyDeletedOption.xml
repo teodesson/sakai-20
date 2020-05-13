@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emailTemplate>
+	<locale></locale>
+	<subject>[${localSakaiName}] ${subject}</subject>
+	<key>polls.notifyDeletedOption</key>
+	<owner>admin</owner>
+	<version>2</version>
+	<message>${message1} ${recipientFirstName},
+
+		${message2} '${siteTitle}' ${message3}
+
+		${pollQuestion}
+
+		${message4} ${localSakaiName} ${message5}
+	</message>
+	<htmlMessage>${message1} ${recipientFirstName},
+&lt;br /&gt;
+&lt;br /&gt;
+		${message2} '${siteTitle}' ${message3}
+&lt;br /&gt;
+&lt;br /&gt;
+		${pollQuestion}
+&lt;br /&gt;
+&lt;br /&gt;
+		${message4} ${localSakaiName} ${message5}
+&lt;br /&gt;
+	</htmlMessage>
+</emailTemplate>
