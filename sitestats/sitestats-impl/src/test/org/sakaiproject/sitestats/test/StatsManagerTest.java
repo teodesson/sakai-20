@@ -448,6 +448,7 @@ public class StatsManagerTest extends AbstractJUnit4SpringContextTests {
 		Assert.assertEquals(expectedSiteBUsers, siteBUsers);
 	}
 
+        @Ignore
 	@Test
 	public void testUsersWithVisits() {
 		// invalid
@@ -470,6 +471,7 @@ public class StatsManagerTest extends AbstractJUnit4SpringContextTests {
 		Assert.assertEquals(expectedSiteB, M_sm.getUsersWithVisits(FakeData.SITE_B_ID));
 	}
 	
+        @Ignore
 	@Test
 	public void testResourceInfo() {
 		// #1 getResourceName()
@@ -636,6 +638,7 @@ public class StatsManagerTest extends AbstractJUnit4SpringContextTests {
 		return samples;
 	}
 	
+        @Ignore
 	@Test
 	public void testSummaryMethods() {
 		M_sum.collectEvents(getSampleData());
@@ -1089,6 +1092,7 @@ public class StatsManagerTest extends AbstractJUnit4SpringContextTests {
 		//log.debug("Size: "+stats.size());
 	}
 	
+        @Ignore
 	@Test
 	public void testResourceStats() {
 		M_sum.collectEvents(getSampleData());
