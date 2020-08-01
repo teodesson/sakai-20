@@ -3679,7 +3679,7 @@ public class ShowPageProducer implements ViewComponentProducer, DefaultView, Nav
 		boolean fake = !usable;  // by default, fake output if not available
 		String itemString = Long.toString(i.getId());
 
-		if (i.getSakaiId().equals(SimplePageItem.DUMMY)) {
+		if ((SimplePageItem.DUMMY).equals(i.getSakaiId())) {
 		    fake = true; // dummy is fake, but still available
 		} else if (i.getType() == SimplePageItem.RESOURCE || i.getType() == SimplePageItem.URL) {
 			if (usable) {
@@ -4936,7 +4936,7 @@ public class ShowPageProducer implements ViewComponentProducer, DefaultView, Nav
 			UIOutput.make(form, "cssDefaultInstructions", messageLocator.getMessage("simplepage.css-default-instructions"));
 			UIOutput.make(form, "cssUploadLabel", messageLocator.getMessage("simplepage.css-upload-label"));
 			UIOutput.make(form, "cssUpload");
-			boolean showSetOwner = ServerConfigurationService.getBoolean("lessonbuilder.show.set.owner", true);
+			boolean showSetOwner = ServerConfigurationService.getBoolean("lessonbuilder.show.set.owner", false);
 			if (showSetOwner){
 				//Set the changeOwner dropdown in the settings dialog
 				UIOutput.make(form, "ownerDefaultInstructions", messageLocator.getMessage("simplepage.owner-default-instructions")

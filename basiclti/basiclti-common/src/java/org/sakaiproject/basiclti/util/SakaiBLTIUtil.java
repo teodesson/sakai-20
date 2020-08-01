@@ -70,6 +70,7 @@ import org.sakaiproject.tool.cover.SessionManager;
 import org.sakaiproject.tool.cover.ToolManager;
 import org.sakaiproject.user.api.User;
 import org.sakaiproject.user.cover.UserDirectoryService;
+import org.sakaiproject.util.api.FormattedText;
 import org.sakaiproject.util.ResourceLoader;
 import org.sakaiproject.util.Web;
 import org.tsugi.basiclti.BasicLTIConstants;
@@ -1283,6 +1284,8 @@ public class SakaiBLTIUtil {
 			if (placementId == null) {
 				return postError("<p>" + getRB(rb, "error.missing", "Error, missing placementId") + "</p>");
 			}
+			FormattedText formattedText = ComponentManager.get(FormattedText.class);
+			placementId = formattedText.escapeHtml(placementId);
 			ToolConfiguration placement = SiteService.findTool(placementId);
 			if (placement == null) {
 				return postError("<p>" + getRB(rb, "error.load", "Error, cannot load placement=") + placementId + ".</p>");
@@ -1482,7 +1485,7 @@ public class SakaiBLTIUtil {
 	ext_ims_lis_memberships_url: http://localhost:8080/imsblis/service/
 	ext_ims_lti_tool_setting_id: c1007fb6345a87cd651785422a2925114d0707fad32c66edb6bfefbf2165819a:::admin:::content:3
 	ext_ims_lti_tool_setting_url: http://localhost:8080/imsblis/service/
-	ext_lms: sakai-20.0
+	ext_lms: sakai-20.1
 	ext_sakai_academic_session: OTHER
 	ext_sakai_launch_presentation_css_url_list: http://localhost:8080/library/skin/tool_base.css,http://localhost:8080/library/skin/morpheus-default/tool.css?version=49b21ca5
 	ext_sakai_role: maintain
